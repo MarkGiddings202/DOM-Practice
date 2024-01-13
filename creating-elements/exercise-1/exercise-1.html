@@ -11,9 +11,18 @@
 <body>
 
     <script>
+        //3
         let p = document.createElement("p")
+        let text = document.createTextNode("Hello there, nice ")
+        let strong = document.createElement("strong")
+        let text2 = document.createTextNode(" you!")
+        strong.textContent = "to meet"
+
+        
         p.setAttribute("id", "intro")
-        p.textContent = "Hello there, nice <strong>to meet</strong> you!"
+        p.append(text)
+        p.append(strong)
+        p.append(text2)
 
         document.body.append(p)
     </script>
