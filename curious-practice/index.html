@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>0</h1>
+    <button onclick="hello()" id="add">+</button>
+    <button id="substract">-</button>
+    <div>
+        <p></p>
+        <button onclick="hello()">Text Generator</button>
+    </div>
+
+    <h2>To-Do List</h2>
+    <input type="text" id="taskInput" placeholder="Enter a new task">
+    <button id="addTaskBtn">Add Task</button>
+    <ul id="taskList"></ul>
+    <script>
+
+        let add = document.querySelector("#add")
+        let sub = document.querySelector("#substract")
+        let h1 = document.querySelector("h1")
+        let p = document.querySelector("p")
+        let taskBtn = document.getElementById("addTaskBtn")
+
+
+
+        let taskInput = document.getElementById("taskInput")
+
+
+        let counter = 0
+
+        add.addEventListener("click", () => {
+            counter += 1
+            h1.textContent = counter
+        })
+
+        sub.addEventListener("click", () => {
+            counter -= 1
+            h1.textContent = counter
+        })
+
+        taskBtn.addEventListener("click", function () {
+            addTask();
+        });
+        taskInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                addTask();
+            }
+        });
+
+        function addTask() {
+        const taskInput = document.getElementById("taskInput");
+        const taskText = taskInput.value.trim();
+
+        if (taskText !== "") {
+            // Create new task item
+            const taskList = document.getElementById("taskList");
+            const taskItem = document.createElement("li");
+            taskItem.className = "taskItem";
+            taskItem.innerHTML = `
+                <span>${taskText}</span>
+                <span class="deleteTaskBtn" onclick="deleteTask(this)">❌</span>
+            `;
+
+            // Append task item to the list
+            taskList.appendChild(taskItem);
+
+            // Clear input field
+            taskInput.value = "";
+        }
+    }
+
+
+    function deleteTask(btn) {
+        const taskItem = btn.parentElement;
+        taskItem.remove();
+    }
+
+        const hello = () => {
+            // make the array inside of the function
+            let randomText = ["First Random", "Second Random", "Third Random"]
+            // get the position of a random element
+            let randomNumber = Math.floor(Math.random() * randomText.length)
+
+            return p.textContent = randomText[randomNumber]
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
