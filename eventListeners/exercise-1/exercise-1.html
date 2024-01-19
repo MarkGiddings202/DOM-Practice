@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- my solution -->
+   <!-- <button onclick="magicBtn()">Show Secret</button> -->
+    <!-- <p>A magical portal has opened!</p> -->
+    <!-- <script> -->
+        <!-- // let btn = document.querySelector("button")
+
+        // const magicBtn = () => {
+        //     const p = document.querySelector("p")
+        //     if (p.textContent.length > 1) {
+        //         p.textContent = ""
+        //     } else if (p.textContent.length === 0) {
+        //         p.textContent = "A magical portal has opened!"
+        //     }
+        // } -->
+    <!-- </script>  -->
+    <!-- second solution -->
+    <button>Show Secret</button>
+    <p hidden>A magical portal has opened!</p>
+
+    <script>
+        const button = document.querySelector("button");
+        button.addEventListener("click", () => {
+            const p = document.querySelector("p");
+            p.toggleAttribute("hidden");
+        });
+    </script>
+</body>
+
+</html>
