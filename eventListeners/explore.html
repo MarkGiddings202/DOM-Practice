@@ -31,9 +31,11 @@
         }
         
         let btn = document.querySelector("#btn")
+        // perfered method
         btn.addEventListener('click',  randomNumber)
+        // can do but won't do.
         btn.addEventListener('click', ()=>{
-            console.log(Math.random())
+            console.log("Inline dynamic function event")
         })
     </script>
 </body>
