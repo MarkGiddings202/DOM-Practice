@@ -12,7 +12,8 @@
     <button onclick="greet()">Greet Me</button>
     <button onclick="sayGoodBye()">Say Goodbye</button>
     <button onclick="doBoth()">Do Both</button>
-    
+    <button id="btn" >Random Number</button>
+
     <script>
         function greet() {
             console.log("Hello sir")
@@ -24,6 +25,16 @@
             greet()
             sayGoodBye()
         }
+        function randomNumber(){
+            let num = Math.random()
+            console.log(num)
+        }
+        
+        let btn = document.querySelector("#btn")
+        btn.addEventListener('click',  randomNumber)
+        btn.addEventListener('click', ()=>{
+            console.log(Math.random())
+        })
     </script>
 </body>
 
