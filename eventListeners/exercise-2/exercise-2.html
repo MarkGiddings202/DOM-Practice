@@ -9,6 +9,7 @@
 
 <body>
     <button>Play!</button>
+    <h1></h1>
     <p id="win" hidden>"You're lucky!"</p>
     <p id="lose" hidden>"Better luck next time!"</p>
 
@@ -21,6 +22,9 @@
             console.log(random);
             // game begins
             if (random > 7) {
+                // counter 
+                let count = document.querySelector("h1")
+                count.textContent = random
                 // winners side
                 let winnersLuck = document.querySelector('#win');
                 // shows text
@@ -30,6 +34,9 @@
                 // sets the attribute to hidden when the winners side wins
                 noLuck.setAttribute("hidden", "");
             } else {
+                // grabs count
+                let count = document.querySelector("h1")
+                count.textContent = random
                 // grabbing the losers element
                 let noLuck = document.querySelector("#lose");
                 // shows the losers element by removing the attribute from the element
@@ -44,7 +51,7 @@
         }
 
         btn.addEventListener('click', randomNumberGenerator)
-        
+
     </script>
 </body>
 
