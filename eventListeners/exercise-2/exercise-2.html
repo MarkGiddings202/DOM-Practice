@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Play!</button>
+    <p id="win" hidden>"You're lucky!"</p>
+    <p id="lose" hidden>"Better luck next time!"</p>
+
+    <script>
+        let btn = document.querySelector('button')
+
+        const randomNumberGenerator = () => {
+            // gets random number between 1 & 10
+            const random = Math.floor(Math.random() * 11);
+            console.log(random);
+            // game begins
+            if (random > 7) {
+                // winners side
+                let winnersLuck = document.querySelector('#win');
+                // shows text
+                winnersLuck.removeAttribute('hidden');
+                // grabbing losers element
+                let noLuck = document.querySelector('#lose');
+                // sets the attribute to hidden when the winners side wins
+                noLuck.setAttribute("hidden", "");
+            } else {
+                // grabbing the losers element
+                let noLuck = document.querySelector("#lose");
+                // shows the losers element by removing the attribute from the element
+                noLuck.removeAttribute("hidden");
+                // grabbing the losers element 
+                let winnersLuck = document.querySelector('#win');
+                // setting it's attribute to hidden so it no longer shows on the noLuck's result
+                winnersLuck.setAttribute("hidden", "");
+
+            }
+
+        }
+
+        btn.addEventListener('click', randomNumberGenerator)
+        
+    </script>
+</body>
+
+</html>
